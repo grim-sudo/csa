@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Champion Sport Activities</title>
+  <desc id="desc">Kids football clubs, sports birthday parties and holiday camps.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0d5f3a"/>
+      <stop offset="100%" stop-color="#128a4b"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0%" stop-color="#ffb347"/>
+      <stop offset="100%" stop-color="#ff6b2c"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1040" cy="140" r="150" fill="rgba(255,255,255,0.08)"/>
+  <circle cx="180" cy="520" r="180" fill="rgba(255,255,255,0.06)"/>
+  <path d="M140 430 L320 210 L500 430 Z" fill="rgba(255,255,255,0.18)"/>
+  <g fill="#ffffff">
+    <text x="120" y="250" font-family="Arial, Helvetica, sans-serif" font-size="54" font-weight="700" letter-spacing="3">CHAMPION</text>
+    <text x="120" y="325" font-family="Arial, Helvetica, sans-serif" font-size="96" font-weight="800">SPORT</text>
+    <text x="120" y="420" font-family="Arial, Helvetica, sans-serif" font-size="96" font-weight="800">ACTIVITIES</text>
+  </g>
+  <rect x="120" y="470" width="370" height="64" rx="32" fill="url(#accent)"/>
+  <text x="155" y="513" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700" fill="#10261d">Football clubs • Parties • Camps</text>
+</svg>

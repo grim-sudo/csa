@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#071a3d" />
+    <title>Champion Sport Activities | Kids Football Clubs, Parties &amp; Camps</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- Basic SEO — site defaults. Per-page <title>, description, canonical
+         and social tags are injected by the <Seo> component on each route. -->
+    <meta name="description" content="Champion Sport Activities runs fun, safe football clubs for children, sports birthday parties and active school holiday camps. Book a free taster session today." />
+    <meta name="keywords" content="kids football club, children football coaching, football classes for kids, sports birthday party, football party for children, football camps, school sports clubs, holiday camps" />
+    <meta name="author" content="Champion Sport Activities" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta property="og:image:alt" content="Champion Sport Activities" />
+    <meta property="og:locale" content="en_GB" />
+    <meta name="twitter:site" content="@ChampionSport" />
+
+    <!-- Prevent theme flash: apply stored/system theme before paint -->
+    <script>
+      (function () {
+        try {
+          var s = localStorage.getItem("csa-theme");
+          var t = (s === "light" || s === "dark") ? s : "light";
+          document.documentElement.setAttribute("data-theme", t);
+        } catch (e) {
+          document.documentElement.setAttribute("data-theme", "light");
+        }
+      })();
+    </script>
+
+    <!-- Structured data for local SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SportsActivityLocation",
+      "name": "Champion Sport Activities",
+      "description": "Kids football clubs, sports birthday parties, school clubs and holiday camps designed to build confidence, teamwork and a love of sport.",
+      "url": "https://www.championsportactivities.co.uk/",
+      "telephone": "+44 0000 000000",
+      "email": "hello@championsportactivities.co.uk",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Community Sports Hub",
+        "addressLocality": "Your Town",
+        "postalCode": "AB1 2CD",
+        "addressCountry": "GB"
+      },
+      "openingHours": "Mo-Su 09:00-19:00",
+      "sameAs": [
+        "https://www.facebook.com/",
+        "https://www.instagram.com/",
+        "https://www.tiktok.com/"
+      ]
+    }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
