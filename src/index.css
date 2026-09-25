@@ -326,7 +326,7 @@ h1, h2, h3, h4 { font-weight: 700; line-height: 1.0; letter-spacing: -.02em; col
    HERO — asymmetric editorial sports campaign
    ===================================================== */
 .hero {
-  position: relative; background: var(--navy); color: var(--white);
+  position: relative; background: var(--bg); color: var(--ink);
   overflow: hidden;
   min-height: min(100svh, 900px);
   display: flex; align-items: stretch;
@@ -344,7 +344,7 @@ h1, h2, h3, h4 { font-weight: 700; line-height: 1.0; letter-spacing: -.02em; col
   left: -2vw; bottom: -4vh; pointer-events: none;
   font-weight: 800; text-transform: uppercase; letter-spacing: -.04em;
   font-size: clamp(9rem, 34vw, 30rem); line-height: .7;
-  color: var(--white); opacity: .04; white-space: nowrap;
+  color: var(--ink); opacity: .04; white-space: nowrap;
 }
 /* yellow rule breaking the grid */
 .hero::after {
@@ -356,14 +356,14 @@ h1, h2, h3, h4 { font-weight: 700; line-height: 1.0; letter-spacing: -.02em; col
 .hero-kicker {
   display: inline-flex; align-items: center; gap: .8em; flex-wrap: wrap;
   font-weight: 600; font-size: .78rem; letter-spacing: .16em; text-transform: uppercase;
-  color: var(--white-72); margin-bottom: clamp(20px, 3vw, 30px);
+  color: var(--ink-soft); margin-bottom: clamp(20px, 3vw, 30px);
 }
 .hero-kicker .pill { background: var(--yellow); color: var(--navy); padding: .45em .8em; font-weight: 700; letter-spacing: .1em; }
 
 .hero-title {
   font-weight: 800; text-transform: uppercase; letter-spacing: -.03em; line-height: .86;
   font-size: clamp(3.2rem, 11vw, 8.4rem);
-  color: var(--white);
+  color: var(--ink);
 }
 .hero-title .accent { color: var(--yellow); }
 .hero-title .line { display: block; overflow: hidden; }
@@ -373,7 +373,7 @@ h1, h2, h3, h4 { font-weight: 700; line-height: 1.0; letter-spacing: -.02em; col
 @keyframes heroRise { from { transform: translateY(105%); } to { transform: none; } }
 
 .hero-lead {
-  font-size: clamp(1.05rem, 1.5vw, 1.25rem); color: var(--white-72);
+  font-size: clamp(1.05rem, 1.5vw, 1.25rem); color: var(--ink-soft);
   max-width: 46ch; margin-top: clamp(24px, 3vw, 32px); line-height: 1.55;
   animation: heroFade 1s var(--ease) .35s both;
 }
@@ -381,7 +381,7 @@ h1, h2, h3, h4 { font-weight: 700; line-height: 1.0; letter-spacing: -.02em; col
 .hero-trust {
   list-style: none; display: flex; flex-wrap: wrap; gap: 10px 26px;
   margin-top: clamp(30px, 4vw, 44px);
-  font-size: .76rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--white);
+  font-size: .76rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--ink);
   animation: heroFade 1s var(--ease) .55s both;
 }
 .hero-trust li { display: flex; align-items: center; gap: 9px; }
@@ -394,7 +394,7 @@ h1, h2, h3, h4 { font-weight: 700; line-height: 1.0; letter-spacing: -.02em; col
   position: relative; width: 100%; min-height: 340px; align-self: center;
   aspect-ratio: 4 / 5; overflow: hidden;
   background-color: var(--photo-fill); background-image: var(--photo-lines);
-  border: 1px solid var(--white-16);
+  border: 1px solid var(--line);
   animation: heroFade 1s var(--ease) .3s both;
 }
 .hero-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.06); }
