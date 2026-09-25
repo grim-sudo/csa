@@ -1,0 +1,195 @@
+- generic [ref=f1e2]:
+  - link "Skip to content" [ref=f1e3] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=f1e4]:
+    - generic [ref=f1e5]:
+      - link "Champion Sport Activities home" [ref=f1e6] [cursor=pointer]:
+        - /url: /
+        - generic [ref=f1e9]:
+          - generic [ref=f1e10]: Champion Sport Activities
+          - generic [ref=f1e11]: Where Confidence Begins
+      - navigation "Primary" [ref=f1e12]:
+        - list [ref=f1e13]:
+          - listitem [ref=f1e14]:
+            - link "Home" [ref=f1e15] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=f1e16]:
+            - link "Football Clubs" [ref=f1e17] [cursor=pointer]:
+              - /url: /football-clubs
+          - listitem [ref=f1e18]:
+            - link "Birthday Parties" [ref=f1e19] [cursor=pointer]:
+              - /url: /birthday-parties
+          - listitem [ref=f1e20]:
+            - link "About Us" [ref=f1e21] [cursor=pointer]:
+              - /url: /about
+          - listitem [ref=f1e22]:
+            - link "Reviews / Gallery" [ref=f1e23] [cursor=pointer]:
+              - /url: /reviews
+          - listitem [ref=f1e24]:
+            - link "Locations" [ref=f1e25] [cursor=pointer]:
+              - /url: /locations
+          - listitem [ref=f1e26]:
+            - link "Coming Soon" [ref=f1e27] [cursor=pointer]:
+              - /url: /coming-soon
+      - generic [ref=f1e28]:
+        - button "Switch to dark mode" [ref=f1e29] [cursor=pointer]
+        - link "Book Now" [ref=f1e33] [cursor=pointer]:
+          - /url: /contact
+  - main [ref=f1e34]:
+    - generic [ref=f1e35]:
+      - text: CHAMPION
+      - generic [ref=f1e36]:
+        - generic [ref=f1e37]:
+          - paragraph [ref=f1e38]:
+            - generic [ref=f1e39]: Ages 3–12
+            - text: Football clubs · Parties · Camps
+          - heading "Play. Learn. Be a Champion." [level=1] [ref=f1e40]:
+            - generic [ref=f1e41]: Play.
+            - generic [ref=f1e43]: Learn.
+            - generic [ref=f1e45]: Be a Champion.
+          - paragraph [ref=f1e47]: Fun-first football coaching that builds confidence, friendships and skills — led by DBS-checked coaches who make sure every kid leaves with a grin.
+          - generic [ref=f1e48]:
+            - link "Book a free taster" [ref=f1e49] [cursor=pointer]:
+              - /url: /contact
+            - link "Explore clubs" [ref=f1e52] [cursor=pointer]:
+              - /url: /football-clubs
+          - list [ref=f1e53]:
+            - listitem [ref=f1e54]: DBS-checked coaches
+            - listitem [ref=f1e56]: Fully insured
+            - listitem [ref=f1e58]: First-aid trained
+        - generic [ref=f1e60]:
+          - generic [ref=f1e61]: ACTION SHOT
+          - generic [aria-hidden]:
+            - img:
+              - generic: Where Confidence Begins • Champion Sport •
+          - generic [ref=f1e62]:
+            - strong [ref=f1e63]: Free
+            - text: Taster session
+          - generic [ref=f1e64]:
+            - generic [ref=f1e65]: 1,200+
+            - generic [ref=f1e66]: Young players
+    - region "What we run" [ref=f1e67]:
+      - generic [aria-hidden] [ref=f1e68]:
+        - generic [ref=f1e69]: Football Clubs
+        - generic [ref=f1e71]: Birthday Parties
+        - generic [ref=f1e73]: Holiday Camps
+        - generic [ref=f1e75]: School Clubs
+        - generic [ref=f1e77]: Multi-Sport
+        - generic [ref=f1e79]: Coaching
+        - generic [ref=f1e81]: Football Clubs
+        - generic [ref=f1e83]: Birthday Parties
+        - generic [ref=f1e85]: Holiday Camps
+        - generic [ref=f1e87]: School Clubs
+        - generic [ref=f1e89]: Multi-Sport
+        - generic [ref=f1e91]: Coaching
+    - generic [ref=f1e94]:
+      - generic [ref=f1e95]:
+        - paragraph [ref=f1e96]: What we do
+        - heading "Everything active, under one club" [level=2] [ref=f1e98]: Everything active,under one club
+      - generic [ref=f1e99]:
+        - link "01 Football Clubs Weekly clubs split by age and stage, ages 3–12." [ref=f1e100] [cursor=pointer]:
+          - /url: /football-clubs
+          - generic [ref=f1e101]: "01"
+          - generic [ref=f1e102]: Football Clubs
+          - generic [ref=f1e103]: Weekly clubs split by age and stage, ages 3–12.
+        - link "02 Birthday Parties 90 minutes of coached games, medals and a trophy." [ref=f1e107] [cursor=pointer]:
+          - /url: /birthday-parties
+          - generic [ref=f1e108]: "02"
+          - generic [ref=f1e109]: Birthday Parties
+          - generic [ref=f1e110]: 90 minutes of coached games, medals and a trophy.
+        - link "03 Holiday Camps Active multi-sport camps through every school holiday." [ref=f1e114] [cursor=pointer]:
+          - /url: /coming-soon
+          - generic [ref=f1e115]: "03"
+          - generic [ref=f1e116]: Holiday Camps
+          - generic [ref=f1e117]: Active multi-sport camps through every school holiday.
+        - link "04 School Clubs Breakfast, lunch and after-school football, on-site." [ref=f1e121] [cursor=pointer]:
+          - /url: /coming-soon
+          - generic [ref=f1e122]: "04"
+          - generic [ref=f1e123]: School Clubs
+          - generic [ref=f1e124]: Breakfast, lunch and after-school football, on-site.
+    - region "Our belief" [ref=f1e128]:
+      - paragraph [ref=f1e130]:
+        - generic [ref=f1e131]: Where confidence begins
+        - text: Build confidence.Make friends.Love the game.
+    - region "Club highlights" [ref=f1e132]:
+      - generic [ref=f1e133]:
+        - generic [ref=f1e134]:
+          - paragraph [ref=f1e135]: By the numbers
+          - heading "A record built on smiles" [level=2] [ref=f1e137]: A record builton smiles
+        - generic [ref=f1e138]:
+          - generic [ref=f1e139]:
+            - generic [ref=f1e140]: 1,200+
+            - generic [ref=f1e141]: Happy kids coached
+          - generic [ref=f1e142]:
+            - generic [ref=f1e143]: 15+
+            - generic [ref=f1e144]: Weekly clubs
+          - generic [ref=f1e145]:
+            - generic [ref=f1e146]: 300+
+            - generic [ref=f1e147]: Parties hosted
+          - generic [ref=f1e148]:
+            - generic [ref=f1e149]: 9/10
+            - generic [ref=f1e150]: Parents recommend us
+    - generic [ref=f1e152]:
+      - generic [ref=f1e153]:
+        - paragraph [ref=f1e154]: Reviews
+        - heading "What parents say" [level=2] [ref=f1e156]
+        - paragraph [ref=f1e157]: Real words from real families. [Swap in your genuine testimonials.]
+      - generic [ref=f1e158]:
+        - figure "— Sarah M., Junior Academy parent" [ref=f1e159]:
+          - generic "5 out of 5 stars" [ref=f1e160]: ★★★★★
+          - blockquote [ref=f1e161]: My son counts down the days until Saturday football. The coaches are endlessly patient and he's grown so much in confidence.
+        - figure "— James T., birthday dad" [ref=f1e163]:
+          - generic "5 out of 5 stars" [ref=f1e164]: ★★★★★
+          - blockquote [ref=f1e165]: Booked a birthday party and it was faultless. Every child was involved and the medals were a lovely touch. Stress-free for us!
+        - figure "— Priya K., Mini Kicker parent" [ref=f1e167]:
+          - generic "5 out of 5 stars" [ref=f1e168]: ★★★★★
+          - blockquote [ref=f1e169]: As a nervous first-timer my daughter was made to feel so welcome. She's now football mad. Can't recommend them enough.
+    - generic [ref=f1e173]:
+      - generic [ref=f1e174]:
+        - heading "Ready to get your little champion started?" [level=2] [ref=f1e175]
+        - paragraph [ref=f1e176]: Free taster sessions available for all clubs. We'll reply within one working day.
+      - generic [ref=f1e177]:
+        - link "Book now" [ref=f1e178] [cursor=pointer]:
+          - /url: /contact
+        - link "Call us" [ref=f1e181] [cursor=pointer]:
+          - /url: tel:+440000000000
+  - contentinfo [ref=f1e182]:
+    - generic [ref=f1e183]:
+      - paragraph [ref=f1e184]: See you on the pitch.
+      - link "Book a free taster" [ref=f1e186] [cursor=pointer]:
+        - /url: /contact
+      - generic [ref=f1e189]:
+        - link [ref=f1e191] [cursor=pointer]:
+          - /url: /
+          - generic [ref=f1e194]:
+            - paragraph [ref=f1e195]: Champion Sport Activities
+            - paragraph [ref=f1e196]: Where Confidence Begins
+        - generic [ref=f1e197]:
+          - heading "Explore" [level=4] [ref=f1e198]
+          - navigation "Footer" [ref=f1e199]:
+            - link "Football Clubs" [ref=f1e200] [cursor=pointer]:
+              - /url: /football-clubs
+            - link "Birthday Parties" [ref=f1e201] [cursor=pointer]:
+              - /url: /birthday-parties
+            - link "About Us" [ref=f1e202] [cursor=pointer]:
+              - /url: /about
+            - link "Reviews / Gallery" [ref=f1e203] [cursor=pointer]:
+              - /url: /reviews
+            - link "Locations" [ref=f1e204] [cursor=pointer]:
+              - /url: /locations
+            - link "Coming Soon" [ref=f1e205] [cursor=pointer]:
+              - /url: /coming-soon
+            - link "Contact / Booking" [ref=f1e206] [cursor=pointer]:
+              - /url: /contact
+        - generic [ref=f1e207]:
+          - heading "Follow" [level=4] [ref=f1e208]
+          - navigation "Social media" [ref=f1e209]:
+            - link "Facebook" [ref=f1e210] [cursor=pointer]:
+              - /url: "#"
+            - link "Instagram" [ref=f1e211] [cursor=pointer]:
+              - /url: "#"
+            - link "TikTok" [ref=f1e212] [cursor=pointer]:
+              - /url: "#"
+      - generic [ref=f1e213]:
+        - paragraph [ref=f1e214]: © 2026 Champion Sport Activities. All rights reserved.
+        - paragraph [ref=f1e215]: DBS-checked · Fully insured · First-aid trained

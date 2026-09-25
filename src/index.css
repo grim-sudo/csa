@@ -346,13 +346,6 @@ h1, h2, h3, h4 { font-weight: 700; line-height: 1.0; letter-spacing: -.02em; col
   font-size: clamp(9rem, 34vw, 30rem); line-height: .7;
   color: var(--ink); opacity: .04; white-space: nowrap;
 }
-/* yellow rule breaking the grid */
-.hero::after {
-  content: ""; position: absolute; z-index: 1; top: 0; left: 58%;
-  width: 4px; height: 100%; background: var(--yellow); opacity: .9;
-  transform: skewX(-9deg);
-}
-
 .hero-kicker {
   display: inline-flex; align-items: center; gap: .8em; flex-wrap: wrap;
   font-weight: 600; font-size: .78rem; letter-spacing: .16em; text-transform: uppercase;
@@ -362,7 +355,7 @@ h1, h2, h3, h4 { font-weight: 700; line-height: 1.0; letter-spacing: -.02em; col
 
 .hero-title {
   font-weight: 800; text-transform: uppercase; letter-spacing: -.03em; line-height: .86;
-  font-size: clamp(3.2rem, 11vw, 8.4rem);
+  font-size: clamp(2.6rem, 8.8vw, 6.6rem);
   color: var(--ink);
 }
 .hero-title .accent { color: var(--yellow); }
@@ -373,7 +366,7 @@ h1, h2, h3, h4 { font-weight: 700; line-height: 1.0; letter-spacing: -.02em; col
 @keyframes heroRise { from { transform: translateY(105%); } to { transform: none; } }
 
 .hero-lead {
-  font-size: clamp(1.05rem, 1.5vw, 1.25rem); color: var(--ink-soft);
+  font-size: clamp(.98rem, 1.35vw, 1.15rem); color: var(--ink-soft);
   max-width: 46ch; margin-top: clamp(24px, 3vw, 32px); line-height: 1.55;
   animation: heroFade 1s var(--ease) .35s both;
 }
@@ -745,10 +738,14 @@ h1, h2, h3, h4 { font-weight: 700; line-height: 1.0; letter-spacing: -.02em; col
 /* =====================================================
    Responsive
    ===================================================== */
+/* Laptop view — nudge the hero type up by 1px */
+@media (min-width: 1101px) and (max-width: 1440px) {
+  .hero-title { font-size: calc(clamp(2.6rem, 8.8vw, 6.6rem) + 1px); }
+  .hero-lead { font-size: calc(clamp(.98rem, 1.35vw, 1.15rem) + 1px); }
+}
 @media (max-width: 1100px) {
   .nav-toggle { display: flex; }
   .nav-cta-desktop { display: none; }
-
   /* keep the logo + controls tappable above the full-screen overlay */
   .brand, .header-actions { position: relative; z-index: 95; }
   /* opaque navy bar painted above the overlay (z90) but below the brand/controls
@@ -807,7 +804,6 @@ h1, h2, h3, h4 { font-weight: 700; line-height: 1.0; letter-spacing: -.02em; col
   .primary-nav.open li:nth-child(8) { transition-delay: .45s; }
 
   .hero-inner { grid-template-columns: 1fr; gap: 40px; }
-  .hero::after { left: auto; right: 8%; }
   .hero-media { max-width: 480px; }
   .split, .loc-layout, .contact-layout { grid-template-columns: 1fr; gap: 44px; }
   .split--reverse .split-media { order: 0; }

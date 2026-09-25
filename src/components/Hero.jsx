@@ -21,7 +21,7 @@ export function Hero() {
           </p>
           <div className="hero-actions">
             <Link className="btn btn-primary btn-lg" to="/contact">Book a free taster <ArrowIcon /></Link>
-            <Link className="btn btn-ghost-panel btn-lg" to="/football-clubs">Explore clubs</Link>
+            <Link className="btn btn-outline btn-lg" to="/football-clubs">Explore clubs</Link>
           </div>
           <ul className="hero-trust">
             <li><span className="dot" /> DBS-checked coaches</li>
