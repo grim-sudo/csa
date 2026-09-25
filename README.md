@@ -99,9 +99,29 @@ scoped to `[data-theme="light"]` / `[data-theme="dark"]`.
 
 ## Contact form
 
-The form validates in the browser only. Before launch, connect it to a backend or
-a no-code service (Formspree, Getform, Basin, Netlify Forms). See `handleSubmit`
-in `Contact.jsx`.
+The enquiry form (`Contact.jsx`) posts JSON to `/api/enquiry`, a serverless
+function (`api/enquiry.js`) that sends the enquiry as an email via
+[Resend](https://resend.com). The Resend API key is read server-side only
+(`RESEND_API_KEY`) and never reaches the browser.
+
+**Environment variables** (set in `.env.local` for local dev, and in the Vercel
+dashboard for production):
+
+| Var | Purpose |
+| --- | --- |
+| `RESEND_API_KEY` | Your Resend API key (required). |
+| `ENQUIRY_TO` | Inbox that receives enquiries. |
+| `RESEND_FROM` | Sender, e.g. `Champion Sport Activities <bookings@yourdomain.co.uk>`. |
+
+`.env.local` is gitignored — never commit the key.
+
+**Local dev:** `npm run dev` serves `/api/enquiry` through a small Vite plugin
+(`vite.config.js`), so the form works the same as in production.
+
+**Test mode:** with the default sender `onboarding@resend.dev`, Resend only
+delivers to your own Resend account email. To send to a real business inbox,
+verify a domain at resend.com/domains and set `RESEND_FROM` to an address on
+that domain (then `ENQUIRY_TO` can be anything).
 
 ## Deploy
 
@@ -122,7 +142,7 @@ For other hosts, add an equivalent catch-all rewrite to `/index.html`.
 ## Pre-launch checklist
 
 - [ ] Replace every placeholder above (logo, tagline, photos, copy).
-- [ ] Wire the enquiry form to a real inbox and test a submission.
+- [ ] Verify a domain in Resend and set `RESEND_FROM`/`ENQUIRY_TO`; add `RESEND_API_KEY` in Vercel; test a real submission.
 - [ ] Update the Google Map embeds to real venues.
 - [ ] Add `public/og-image.png` (1200×630) and set canonical/sitemap domain.
 - [ ] Test light + dark mode at 375 / 768 / 1440px.

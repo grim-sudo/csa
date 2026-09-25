@@ -6,23 +6,43 @@ const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 export function Contact() {
   const [errors, setErrors] = useState({});
   const [sent, setSent] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [serverError, setServerError] = useState("");
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
-    const data = new FormData(e.currentTarget);
+    const form = e.currentTarget;
+    const data = new FormData(form);
     const next = {};
     if (!String(data.get("parent-name") || "").trim()) next["parent-name"] = "Please enter your name.";
     if (!EMAIL_RE.test(String(data.get("email") || "").trim())) next["email"] = "Please enter a valid email.";
     setErrors(next);
+    setServerError("");
 
-    if (Object.keys(next).length === 0) {
-      // Demo only — wire to your email service or booking tool before launch.
-      setSent(true);
-      e.currentTarget.reset();
-    } else {
+    if (Object.keys(next).length > 0) {
       setSent(false);
       const first = document.querySelector('[aria-invalid="true"]');
       if (first) first.focus();
+      return;
+    }
+
+    setSubmitting(true);
+    try {
+      const res = await fetch("/api/enquiry", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(Object.fromEntries(data)),
+      });
+      if (!res.ok) {
+        const body = await res.json().catch(() => ({}));
+        throw new Error(body.error || "Something went wrong. Please try again.");
+      }
+      setSent(true);
+      form.reset();
+    } catch (err) {
+      setServerError(err.message || "Something went wrong. Please try again.");
+    } finally {
+      setSubmitting(false);
     }
   }
 
@@ -103,14 +123,18 @@ export function Contact() {
             <textarea id="message" name="message" rows="4" placeholder="Tell us a little about what you're after..." />
           </div>
 
-          <button type="submit" className="btn btn-primary btn-block btn-lg">Send enquiry <ArrowIcon /></button>
+          <button type="submit" className="btn btn-primary btn-block btn-lg" disabled={submitting}>
+            {submitting ? "Sending…" : <>Send enquiry <ArrowIcon /></>}
+          </button>
           <p className="form-note">
-            We'll never share your details. This demo form validates in the browser; connect it to
-            your email or booking tool before launch.
+            We'll never share your details. We'll reply to the email address you provide.
           </p>
+          {serverError && (
+            <p className="field-error" role="alert">{serverError}</p>
+          )}
           {sent && (
             <p className="form-success" role="status">
-              Thanks! Your enquiry has been captured. We'll be in touch within one working day.
+              Thanks! Your enquiry has been sent. We'll be in touch within one working day.
             </p>
           )}
         </form>

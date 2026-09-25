@@ -1,5 +1,37 @@
 import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 import { ArrowIcon, BallIcon, PinIcon, TrophyIcon, WhistleIcon } from "./icons";
+import SmoothScrollSlider from "./SmoothScrollSlider";
+import "./SmoothScrollSlider.css";
+
+/* ---------- Real media (src/assets/media) ----------
+   Files are grouped by name: `club-*` = football clubs, `bday-*` = birthday parties.
+   Vite bundles + hashes each imported file; glob keys are sorted for stable order. */
+const byName = (glob) =>
+  Object.entries(glob)
+    .sort(([a], [b]) => a.localeCompare(b))
+    .map(([, url]) => url);
+
+const clubPhotos = byName(import.meta.glob("../assets/media/club-*.jpg", { eager: true, query: "?url", import: "default" }));
+const bdayPhotos = byName(import.meta.glob("../assets/media/bday-*.jpg", { eager: true, query: "?url", import: "default" }));
+const clubVideos = byName(import.meta.glob("../assets/media/club-*.mp4", { eager: true, query: "?url", import: "default" }));
+const bdayVideos = byName(import.meta.glob("../assets/media/bday-*.mp4", { eager: true, query: "?url", import: "default" }));
+
+/* Muted, looping, controls-free clip — audio is already stripped from the files. */
+function Clip({ src, className }) {
+  return (
+    <video
+      className={className}
+      src={src}
+      autoPlay
+      loop
+      muted
+      playsInline
+      preload="metadata"
+      aria-hidden="true"
+    />
+  );
+}
 
 /* ---------- Ticker (yellow editorial marquee) ---------- */
 export function Ticker() {
@@ -119,10 +151,12 @@ export function FootballClubs() {
         </header>
 
         <div className="card-grid-3">
-          {tiers.map((t) => (
+          {tiers.map((t, i) => (
             <article className="program-card" key={t.name} data-reveal>
               {t.flag && <span className="card-flag">{t.flag}</span>}
-              <div className="program-photo"><span className="ph-label">Session photo</span></div>
+              <div className="program-photo">
+                <img src={clubPhotos[i]} alt={`${t.name} session`} loading="lazy" />
+              </div>
               <div className="program-body">
                 <span className="program-age">{t.age}</span>
                 <h3>{t.name}</h3>
@@ -134,6 +168,12 @@ export function FootballClubs() {
                 </div>
               </div>
             </article>
+          ))}
+        </div>
+
+        <div className="media-reel" data-reveal>
+          {clubVideos.map((src, i) => (
+            <div className="reel-clip" key={i}><Clip src={src} className="reel-video" /></div>
           ))}
         </div>
       </div>
@@ -174,8 +214,21 @@ export function Parties() {
         </div>
 
         <div className="split-media" data-reveal>
-          <div className="split-photo"><span className="ph-label">Party photo</span></div>
+          <div className="split-photo"><img src={bdayPhotos[0]} alt="Birthday party football fun" loading="lazy" /></div>
           <div className="price-chip"><span className="n">From &pound;120</span><span className="l">All-inclusive</span></div>
+        </div>
+      </div>
+
+      <div className="wrap party-gallery-wrap">
+        <div className="party-gallery" data-reveal>
+          {bdayVideos.map((src, i) => (
+            <div className="party-media party-media--clip" key={`v${i}`}><Clip src={src} className="party-video" /></div>
+          ))}
+          {bdayPhotos.slice(1).map((src, i) => (
+            <div className="party-media" key={`p${i}`}>
+              <img src={src} alt={`Birthday party photo ${i + 1}`} loading="lazy" />
+            </div>
+          ))}
         </div>
       </div>
     </section>
@@ -266,23 +319,51 @@ export function Reviews() {
 }
 
 /* ---------- Gallery ---------- */
+// Real session + party photos from src/assets/media (club-* and bday-*),
+// shown full-colour in a draggable Smooth Scroll Slider (Originkit).
+const GALLERY_ITEMS = [...clubPhotos, ...bdayPhotos].map((image) => ({ image }));
+
+// Give the slider a shorter box and smaller tiles on narrow screens; tile
+// widths are derived per-image from each photo's aspect ratio.
+function useGalleryLayout() {
+  const read = () => {
+    if (typeof window === "undefined") return { height: 640, slideHeight: 380 };
+    if (window.innerWidth <= 560) return { height: 360, slideHeight: 230 };
+    if (window.innerWidth <= 900) return { height: 480, slideHeight: 300 };
+    return { height: 640, slideHeight: 380 };
+  };
+  const [layout, setLayout] = useState(read);
+  useEffect(() => {
+    const onResize = () => setLayout(read());
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
+  return layout;
+}
+
 export function Gallery() {
-  const items = ["tall", "", "", "wide", "", ""];
+  const { height, slideHeight } = useGalleryLayout();
   return (
     <section className="section" id="gallery">
       <div className="wrap">
         <header className="section-head" data-reveal>
           <p className="index-tag"><span className="line" /> Gallery</p>
           <h2 className="section-title">Smiles in action</h2>
-          <p className="section-intro">Drop your best session and party photos in here.</p>
+          <p className="section-intro">Drag or use the arrows to explore session and party moments.</p>
         </header>
-        <div className="gallery-grid">
-          {items.map((mod, i) => (
-            <div key={i} className={`gallery-item${mod ? ` gallery-item--${mod}` : ""}`} data-reveal>
-              <span>Photo</span>
-            </div>
-          ))}
-        </div>
+      </div>
+      <div className="gallery-drift" data-reveal style={{ height }}>
+        <SmoothScrollSlider
+          images={GALLERY_ITEMS}
+          slideHeight={slideHeight}
+          radius={14}
+          spacing={2}
+          smoothness={9}
+          dim={6}
+          sensitivity={5}
+          autoSpeed={16}
+          background="transparent"
+        />
       </div>
     </section>
   );

@@ -1,0 +1,12 @@
+# dependencies / build output
+node_modules
+dist
+
+# local env — keep secrets out of git
+.env
+.env.local
+.env.*.local
+
+# editor / tooling
+.playwright-mcp
+.DS_Store
