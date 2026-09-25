@@ -53,10 +53,10 @@ export function Ticker() {
 /* ---------- Activities (editorial numbered index) ---------- */
 export function Activities() {
   const rows = [
-    { to: "/football-clubs", title: "Football Clubs", desc: "Weekly clubs split by age and stage, ages 3\u201312." },
-    { to: "/birthday-parties", title: "Birthday Parties", desc: "90 minutes of coached games, medals and a trophy." },
-    { to: "/coming-soon", title: "Holiday Camps", desc: "Active multi-sport camps through every school holiday." },
-    { to: "/coming-soon", title: "School Clubs", desc: "Breakfast, lunch and after-school football, on-site." },
+    { to: "/football-clubs", title: "Football Clubs", desc: "Weekly clubs split by age and stage, ages 3\u201312.", img: clubPhotos[0] },
+    { to: "/birthday-parties", title: "Birthday Parties", desc: "90 minutes of coached games, medals and a trophy.", img: bdayPhotos[0] },
+    { to: "/coming-soon", title: "Holiday Camps", desc: "Active multi-sport camps through every school holiday.", img: clubPhotos[1] },
+    { to: "/coming-soon", title: "School Clubs", desc: "Breakfast, lunch and after-school football, on-site.", img: clubPhotos[2] },
   ];
   return (
     <section className="section activities" id="activities">
@@ -73,7 +73,9 @@ export function Activities() {
               <span className="a-title">{r.title}</span>
               <span className="a-desc">{r.desc}</span>
               <span className="a-arrow" aria-hidden="true"><ArrowIcon /></span>
-              <span className="a-reveal" aria-hidden="true" />
+              <span className="a-reveal" aria-hidden="true">
+                {r.img ? <img src={r.img} alt="" loading="lazy" /> : null}
+              </span>
             </Link>
           ))}
         </div>
