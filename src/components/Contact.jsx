@@ -60,11 +60,11 @@ export function Contact() {
           <ul className="contact-list">
             <li>
               <span className="contact-ico" aria-hidden="true"><PhoneIcon /></span>
-              <div><span className="contact-label">Phone</span><a href="tel:+440000000000">[ 0000 000 000 ]</a></div>
+              <div><span className="contact-label">Phone</span><a href="tel:+447950097343">+44 7950 097343</a></div>
             </li>
             <li>
               <span className="contact-ico" aria-hidden="true"><MailIcon /></span>
-              <div><span className="contact-label">Email</span><a href="mailto:hello@championsportactivities.co.uk">hello@championsportactivities.co.uk</a></div>
+              <div><span className="contact-label">Email</span><a href="mailto:championsportsclubltd@gmail.com">championsportsclubltd@gmail.com</a></div>
             </li>
             <li>
               <span className="contact-ico" aria-hidden="true"><PinIcon /></span>

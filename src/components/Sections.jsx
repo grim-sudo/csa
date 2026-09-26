@@ -453,7 +453,7 @@ export function BookingCTA() {
           </div>
           <div className="cta-actions">
             <Link className="btn btn-on-panel btn-lg" to="/contact">Book now <ArrowIcon /></Link>
-            <a className="btn btn-ghost-panel btn-lg" href="tel:+440000000000">Call us</a>
+            <a className="btn btn-ghost-panel btn-lg" href="tel:+447950097343">Call us</a>
           </div>
         </div>
       </div>
